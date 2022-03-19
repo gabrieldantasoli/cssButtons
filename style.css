@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 40vh;
+    border-bottom: 1rem solid #eee;
+}
+#card1 input[type='radio']{
+    display: none;
+}
+#card1{
+    display: flex;
+    flex-direction: column;
+}
+#card1 label{
+    padding: 1rem 2rem;
+    background-color: antiquewhite; 
+    border: 2px solid rgb(12, 226, 23);
+    border-radius: 10px;
+    margin: .5rem;
+    font-family: sans-serif,Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(12, 226, 23);
+}
+#card1 label::before{
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(12, 226, 23);
+    margin-right: .5rem;
+    border-radius: 50%;
+}
+#card1 input[type="radio"]:checked + label{
+    background-color: rgb(12, 226, 23);
+    color: white;
+}
+#card1 input[type="radio"]:checked + label::before{
+    width: 8px;
+    height: 8px;
+    border: 10px solid white;
+}
+
+/*card 2*/
+.outer{
+    position: relative;
+}
+.outer:hover{
+    background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+}
+.button{
+    width: 220px;
+    height: 70px;
+    border-radius: 35px;;
+}
+.outer button,.outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.outer button{
+    z-index: 10;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #f2f2f2;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.button button{
+    width: 210px;
+    height: 60px;
+    border-radius: 30px;
+}
+.button span{
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 35px;
+}
+.button:hover span:nth-child(1){
+    filter: blur(7px);
+}
+.button:hover span:nth-child(2){
+    filter: blur(14px);
+}
+.outer:hover{
+    animation: rotate 1.5s linear infinite;
+}
+
+
+@keyframes rotate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
